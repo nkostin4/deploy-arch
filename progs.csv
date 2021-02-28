@@ -10,7 +10,7 @@
 ,sxiv,"is a minimal image viewer."
 ,xwallpaper,"sets the wallpaper."
 ,ffmpeg,"can splice and dice video and audio on the command line."
-,vim,"is a text editor"
+,neovim,"is a text editor"
 ,mpd,"is a lightweight music daemon."
 ,mpc,"is a terminal interface for mpd."
 ,ncmpcpp,"a ncurses interface for music with multiple formats and a powerful tag editor."
