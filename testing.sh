@@ -167,7 +167,7 @@ preinstallmsg || error "User exited."
 # Refresh Arch keyrings.
 refreshkeys || error "Error automatically refreshing Arch keyring. Consider doing so manually."
 
-for x in curl base-devel git ntp bash; do
+for x in curl git ntp bash python; do
 	dialog --title "N. Kostin's Installation" --infobox "Installing \`$x\` which is required to install and configure other programs." 5 70
 	installpkg "$x"
 done
@@ -198,11 +198,6 @@ installationloop
 # Install the dotfiles in the user's home directory
 putgitrepo "$dotfilesrepo" "/home/$name" "$repobranch"
 rm -f "/home/$name/README.md" "/home/$name/LICENSE" "/home/$name/FUNDING.yml"
-# Create default urls file if none exists.
-[ ! -f "/home/$name/.config/newsboat/urls" ] && echo "http://lukesmith.xyz/rss.xml
-https://notrelated.libsyn.com/rss
-https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA \"~Luke Smith (YouTube)\"
-https://www.archlinux.org/feeds/news/" > "/home/$name/.config/newsboat/urls"
 # make git ignore deleted LICENSE & README.md files
 git update-index --assume-unchanged "/home/$name/README.md" "/home/$name/LICENSE" "/home/$name/FUNDING.yml"
 
@@ -212,9 +207,6 @@ systembeepoff
 # Make bash the default shell for the user.
 chsh -s /bin/bash "$name" >/dev/null 2>&1
 sudo -u "$name" mkdir -p "/home/$name/.cache/bash/"
-
-# dbus UUID must be generated for Artix runit.
-# dbus-uuidgen > /var/lib/dbus/machine-id
 
 # Tap to click
 [ ! -f /etc/X11/xorg.conf.d/40-libinput.conf ] && printf 'Section "InputClass"
