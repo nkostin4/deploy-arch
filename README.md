@@ -11,4 +11,4 @@ sh deploy.sh
 
 ## What does this script do?
 
-This is a bootstrapping script that is meant to be run after a minimal installation of Arch Linux.
+This is a bootstrapping script that is meant to be run after installing Arch Linux.
