@@ -187,7 +187,7 @@ newperms "%wheel ALL=(ALL) NOPASSWD: ALL"
 sed -i "s/-j2/-j$(nproc)/;s/^#MAKEFLAGS/MAKEFLAGS/" /etc/makepkg.conf
 
 # Uncomment if an AUR helper needs to be installed
-# manualinstall $aurhelper || error "Failed to install AUR helper."
+manualinstall $aurhelper || error "Failed to install AUR helper."
 
 # The command that does all the installing. Reads the progs.csv file and
 # installs each needed program the way required. Be sure to run this only after
