@@ -5,10 +5,17 @@
 Run the following commands as a root user:
 
 ```
-curl -LO nkostin.neocities.org/boot.sh
-sh boot.sh
+curl -LO https://raw.githubusercontent.com/nkostin4/deploy-arch/master/stable.sh
+sh stable.sh
+```
+
+or, if you want the experimental version, run
+
+```
+curl -LO https://raw.githubusercontent.com/nkostin4/deploy-arch/master/testing.sh
+sh testing.sh
 ```
 
 ## What does this script do?
 
-This is a bootstrapping script (inspired by LARBS) that is meant to be run after a minimal installation of Artix (or Arch) linux.
+This is a bootstrapping script that is meant to be run after a minimal installation of Artix (or Arch) linux.
