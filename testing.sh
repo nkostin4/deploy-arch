@@ -94,8 +94,9 @@ gitmakeinstall() {
 	dialog --title "N. Kostin's Installation" --infobox "Installing \`$progname\` ($n of $total) via \`git\` and \`make\`. $(basename "$1") $2" 5 70
 	sudo -u "$name" git clone --depth 1 "$1" "$dir" >/dev/null 2>&1 || { cd "$dir" || return 1 ; sudo -u "$name" git pull --force origin master;}
 	cd "$dir" || exit 1
-	make >/dev/null 2>&1
-	make install >/dev/null 2>&1
+    make clean install >/dev/null 2>&1
+	# make >/dev/null 2>&1
+	# make install >/dev/null 2>&1
 	cd /tmp || return 1 ;}
 
 aurinstall() { \
@@ -107,7 +108,7 @@ aurinstall() { \
 pipinstall() { \
 	dialog --title "N. Kostin's Installation" --infobox "Installing the Python package \`$1\` ($n of $total). $1 $2" 5 70
 	[ -x "$(command -v "pip")" ] || installpkg python-pip >/dev/null 2>&1
-	yes | pip install "$1"
+	yes | pip3 install "$1"
 	}
 
 installationloop() { \
