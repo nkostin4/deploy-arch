@@ -11,4 +11,4 @@ sh boot.sh
 
 ## What does this script do?
 
-This is a bootstrapping script (inspired by LARBS) that is meant to be run after a minimal installation of Artix (or Arch) linux. It installs less bloatware (lol) than LARBS does.
+This is a bootstrapping script (inspired by LARBS) that is meant to be run after a minimal installation of Artix (or Arch) linux.
