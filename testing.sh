@@ -95,8 +95,6 @@ gitmakeinstall() {
 	sudo -u "$name" git clone --depth 1 "$1" "$dir" >/dev/null 2>&1 || { cd "$dir" || return 1 ; sudo -u "$name" git pull --force origin master;}
 	cd "$dir" || exit 1
     make clean install >/dev/null 2>&1
-	# make >/dev/null 2>&1
-	# make install >/dev/null 2>&1
 	cd /tmp || return 1 ;}
 
 aurinstall() { \
@@ -188,6 +186,7 @@ newperms "%wheel ALL=(ALL) NOPASSWD: ALL"
 # Use all cores for compilation.
 sed -i "s/-j2/-j$(nproc)/;s/^#MAKEFLAGS/MAKEFLAGS/" /etc/makepkg.conf
 
+# Uncomment if an AUR helper needs to be installed
 # manualinstall $aurhelper || error "Failed to install AUR helper."
 
 # The command that does all the installing. Reads the progs.csv file and

@@ -4,6 +4,7 @@
 ,xorg-xbacklight,"enables changing screen brightness levels."
 ,xcompmgr,"is for transparency and removing screen-tearing."
 ,xorg-xprop,"is a tool for detecting window properties."
+,dosfstools,"allows access to dos-like filesystems."
 ,rxvt-unicode,"is a terminal emulator."
 ,urxvt-perls,"provides perl scripts for the urxvt terminal."
 ,sxiv,"is a minimal image viewer."
